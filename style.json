@@ -1,0 +1,43 @@
+{
+  "data": {
+    "region": {
+      "ui:autofocus": true,
+      "ui:placeholder": "Enter AWS region (e.g., us-west-2)"
+    },
+    "bucketName": {
+      "ui:placeholder": "Enter bucket name identifier"
+    },
+    "bucketFullName": {
+      "ui:placeholder": "Enter full bucket name"
+    },
+    "environment": {
+      "ui:placeholder": "Enter environment (e.g., production, staging)"
+    },
+    "owner": {
+      "ui:placeholder": "Enter owner name or team"
+    },
+    "project": {
+      "ui:placeholder": "Enter project name"
+    },
+    "costCenter": {
+      "ui:placeholder": "Enter cost center"
+    },
+    "versioning": {
+      "ui:placeholder": "Enter versioning status (Enabled/Disabled)"
+    },
+    "lifecycleDays": {
+      "ui:widget": "updown",
+      "ui:description": "Number of days for lifecycle policy"
+    },
+    "transitionDays": {
+      "ui:widget": "updown",
+      "ui:description": "Number of days before transition"
+    },
+    "loggingBucket": {
+      "ui:placeholder": "Enter logging bucket name"
+    },
+    "loggingPrefix": {
+      "ui:placeholder": "Enter logging prefix path"
+    }
+  }
+}

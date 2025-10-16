@@ -1,0 +1,63 @@
+# Terraform Configuration for S3 Bucket
+# Generated on: <%= new Date().toISOString() %>
+# Author: <%= metadata.author %>
+# Version: <%= metadata.version %>
+# Account: <%= metadata.account %>
+# Contact: <%= metadata.teamEmail %>
+
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+  required_version = ">= 1.0"
+}
+
+provider "aws" {
+  region = "<%= data.region %>"
+
+  default_tags {
+    tags = {
+      ManagedBy   = "Terraform"
+      Account     = "<%= metadata.account %>"
+      Author      = "<%= metadata.author %>"
+      ContactEmail = "<%= metadata.teamEmail %>"
+    }
+  }
+}
+
+resource "aws_s3_bucket" "<%= data.bucketName %>" {
+  bucket = "<%= data.bucketFullName %>"
+
+  tags = {
+    Name        = "<%= data.bucketFullName %>"
+    Environment = "<%= data.environment %>"
+    Owner       = "<%= data.owner %>"
+    Project     = "<%= data.project %>"
+    CostCenter  = "<%= data.costCenter %>"
+    CreatedDate = "<%= metadata.createdDate %>"
+    Version     = "<%= metadata.version %>"
+  }
+}
+
+resource "aws_s3_bucket_versioning" "<%= data.bucketName %>_versioning" {
+  bucket = aws_s3_bucket.<%= data.bucketName %>.id
+
+  versioning_configuration {
+    status = "<%= data.versioning %>"
+  }
+}
+
+output "bucket_info" {
+  description = "Complete bucket information"
+  value = {
+    bucket_id   = aws_s3_bucket.<%= data.bucketName %>.id
+    bucket_arn  = aws_s3_bucket.<%= data.bucketName %>.arn
+    region      = "<%= data.region %>"
+    account     = "<%= metadata.account %>"
+    owner       = "<%= data.owner %>"
+    created_by  = "<%= metadata.author %>"
+  }
+}

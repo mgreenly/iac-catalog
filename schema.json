@@ -1,0 +1,90 @@
+{
+  "type": "object",
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "title": "metadata",
+      "properties": {
+        "author": {
+          "type": "string",
+          "title": "author"
+        },
+        "version": {
+          "type": "string",
+          "title": "version"
+        },
+        "account": {
+          "type": "string",
+          "title": "account"
+        },
+        "teamEmail": {
+          "type": "string",
+          "title": "teamEmail"
+        },
+        "createdDate": {
+          "type": "string",
+          "title": "createdDate"
+        }
+      },
+      "required": [
+        "author",
+        "version",
+        "account",
+        "teamEmail",
+        "createdDate"
+      ]
+    },
+    "data": {
+      "type": "object",
+      "title": "data",
+      "properties": {
+        "region": {
+          "type": "string",
+          "title": "region"
+        },
+        "bucketName": {
+          "type": "string",
+          "title": "bucketName"
+        },
+        "bucketFullName": {
+          "type": "string",
+          "title": "bucketFullName"
+        },
+        "environment": {
+          "type": "string",
+          "title": "environment"
+        },
+        "owner": {
+          "type": "string",
+          "title": "owner"
+        },
+        "project": {
+          "type": "string",
+          "title": "project"
+        },
+        "costCenter": {
+          "type": "string",
+          "title": "costCenter"
+        },
+        "versioning": {
+          "type": "string",
+          "title": "versioning"
+        }
+      },
+      "required": [
+        "region",
+        "bucketName",
+        "bucketFullName",
+        "environment",
+        "owner",
+        "project",
+        "costCenter",
+        "versioning"
+      ]
+    }
+  },
+  "required": [
+    "metadata",
+    "data"
+  ]
+}

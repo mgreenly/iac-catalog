@@ -1,0 +1,18 @@
+{
+  "bucketName": "my_app_bucket",
+  "bucketFullName": "my-company-app-bucket-prod",
+  "region": "us-west-2",
+  "environment": "production",
+  "owner": "devops-team",
+  "project": "web-application",
+  "costCenter": "engineering",
+  "versioning": "Enabled",
+  "publicAccess": false,
+  "lifecycleEnabled": true,
+  "lifecycleDays": 90,
+  "transitionToIA": true,
+  "transitionDays": 30,
+  "logging": true,
+  "loggingBucket": "my-company-logs-bucket",
+  "loggingPrefix": "s3-access-logs"
+}
